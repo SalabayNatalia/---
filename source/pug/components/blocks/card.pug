@@ -1,0 +1,22 @@
+mixin card(options = {})
+  - const countries = options.countries || [];
+  - const hashtags = options.hashtags || [];
+
+  .card&attributes(attributes)
+    .card__wrapper
+      .card__travelers-avatar
+      .card__content
+        .card__travelers-name
+        ul.card__hashtags
+          each hashtag in hashtags
+            li.card__hashtag!= hashtag.hashtag
+        if options.buttonCall
+          +btn({text: "Позвать!", href: "#", isExternal: true}).btn(aria-label="Позвать!")
+        if options.like
+          +icon(like.name, like.width, like.height)
+          p.card__likes!= like.count
+        ul.card__countries
+          each country in countries
+            li.card__country
+              +icon(country.name, country.width, country.height)
+              p.card__country-name != options.country
