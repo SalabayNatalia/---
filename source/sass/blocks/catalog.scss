@@ -3,5 +3,6 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     column-gap: 85px;
+    grid-template-rows: 1fr min-content;
   }
 }

@@ -2,4 +2,6 @@
   padding: 26px 40px 24px 29px;
   background-color: $color-default-white;
   border-radius: 20px;
+  grid-row: 2 / -1;
+  grid-column: 1 / 2;
 }
