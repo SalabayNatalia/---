@@ -1,12 +1,25 @@
 mixin card(options = {})
   - const countries = options.countries || [];
   - const hashtags = options.hashtags || [];
+  - const imagePath = options.imagePath || "";
+  - const image = options.image || "";
+  - const imageExt = options.imageExt || "";
+  - const imageWidth = options.imageWidth || "";
+  - const imageHeight = options.imageHeight || "";
+  - const travelerName = options.travelerName || "";
+  - const marker = options.marker || "";
+  - const transport = options.transport || [];
 
   .card&attributes(attributes)
     .card__wrapper
       .card__travelers-avatar
-      .card__content
-        .card__travelers-name
+        +picture(imagePath, image, imageExt, imageWidth, imageHeight, "")
+      //- .card__content
+      .card__content-inner
+        .card__name-marker
+          if (marker)
+            .card__marker(class=`card__marker--${marker}`)
+          .card__traveler-name!= travelerName
         ul.card__hashtags
           each hashtag in hashtags
             li.card__hashtag!= hashtag.hashtag
@@ -15,8 +28,15 @@ mixin card(options = {})
         if options.like
           +icon(like.name, like.width, like.height)
           p.card__likes!= like.count
+      .card__content-inner
         ul.card__countries
           each country in countries
             li.card__country
               +icon(country.name, country.width, country.height)
-              p.card__country-name != options.country
+              p.card__country-name!= country.country
+      ul.card__transport
+        each item in transport
+          li.card__transport-item
+            button.card__transport-button(class=`${item.isActive?"is-active":""}`, type="button")
+              +icon(item.name, item.width, item.height).card__transport-icon
+

@@ -1,0 +1,132 @@
+.card {
+  border-radius: 20px;
+  background-color: $color-default-white;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr min-content;
+  }
+
+  &__travelers-avatar {
+    max-width: 100%;
+    height: auto;
+    grid-column: 1/2;
+    grid-row: 1/-1;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      object-fit: cover;
+    }
+  }
+
+  &__name-marker {
+    display: flex;
+    position: relative;
+  }
+
+  &__marker {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: -15px;
+
+    &--red {
+      background-color: $salmon;
+    }
+
+    &--green {
+      background-color: $lawn-green;
+    }
+  }
+
+  &__traveler-name {
+    font-family: $ff-roboto;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: $catalina-blue;
+    margin: 0 0 20px;
+  }
+
+  &__hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    column-gap: 5px;
+    max-width: 226px;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__hashtag {
+    font-family: $ff-roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  // &__content {
+  //   padding: 30px;
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr;
+  // }
+
+  &__countries {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__country {
+    display: flex;
+  }
+
+  &__country-name {
+    font-family: $ff-roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: $catalina-blue;
+    text-transform: uppercase;
+    margin: 0 0 13px;
+  }
+
+  &__transport {
+    list-style: none;
+    display: flex;
+    grid-column: 3 / -1;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__transport-button {
+    border: none;
+    background-color: $color-transparent;
+  }
+
+  &__transport-icon {
+    fill: $catalina-blue;
+  }
+
+
+  &__transport-button.is-active {
+    .card__transport-icon {
+      opacity: 0.15;
+    }
+  }
+}
