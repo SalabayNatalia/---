@@ -1,0 +1,74 @@
+.round-btn {
+  width: 50px;
+  height: 50px;
+  background-color: $color-transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: background-color $trans-default, opacity $trans-default;
+
+  &__icon {
+    display: block;
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: rgba(25, 33, 68, 0.3);
+    transition: fill $trans-default;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &__icon-active {
+    display: block;
+    fill: $red-orange;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  @include hover-focus {
+    background-color: $lavender;
+
+    svg {
+      fill: rgba(25, 33, 68, 1);
+    }
+  }
+
+  &:active {
+    background-color: $lavender;
+
+    svg {
+      fill: rgba(25, 33, 68, 0.1);
+    }
+  }
+
+  &.is-active {
+    background-color: $tutu;
+
+    svg {
+      // fill-rule: nonzero;
+      // fill-rule: evenodd;
+      fill: $red-orange;
+    }
+
+    @include hover-focus {
+      background-color: $remy;
+
+      svg {
+        fill: $red-orange;
+      }
+    }
+
+    // &:active {
+    //   background-color: $remy;
+
+    //   svg {
+    //     fill: rgba(240, 35, 35, 0.3);
+    //   }
+    // }
+  }
+}

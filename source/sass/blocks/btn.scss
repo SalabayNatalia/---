@@ -1,14 +1,20 @@
 .btn {
   display: inline-flex;
-  padding: 10px 20px;
+  padding: 17px 27px;
 
-  color: $color-default-white;
+  color: $midnight-express;
 
-  background-color: $color-neon-blue;
+  background-color: $pale-cornflower-blue;
   border: none;
   cursor: pointer;
+  border-radius: 25px;
+  font-family: $ff-roboto;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
 
-  transition: opacity $trans-default;
+  transition: opacity $trans-default, background-color $trans-default;
 
   &--red {
     background-color: $color-torch-red;
@@ -21,6 +27,11 @@
   }
 
   @include hover-focus {
-    opacity: 0.8;
+    background-color: $picton-blue;
   }
+}
+
+.btn.is-active {
+  background-color: $picton-blue;
+  color: rgba(22, 28, 53, 0.3);
 }

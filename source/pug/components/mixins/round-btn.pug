@@ -1,0 +1,26 @@
+//- mixin round-btn(options = {})
+//-   - const tag = options.href ? "a" : "button";
+//-   - const href = options.href || false;
+//-   - const icon = options.icon || false
+//-   - const text = options.text || "";
+//-   - const type = options.type || tag === "button" ? options.type || "button" : false;
+//-   - const target = options.isExternal ? "_blank" : false;
+//-   - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+
+//-   #{tag}.round-btn(href=href, target=target, rel=rel, type=type, class= text ? "round-btn--text" : null)&attributes(attributes)
+//-     if icon
+//-       +icon(icon.name, icon.width, icon.height).round-btn__icon
+mixin round-btn(options = {})
+  - const tag = options.href ? "a" : "button";
+  - const href = options.href || false;
+  - const icon = options.icon || false;
+  - const text = options.text || "";
+  - const type = options.type || tag === "button" ? options.type || "button" : false;
+  - const target = options.isExternal ? "_blank" : false;
+  - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+  - const buttonActive = options.buttonActive || false;
+
+  #{tag}.round-btn(href=href, target=target, rel=rel, type=type, class= text ? "round-btn--text" : null)&attributes(attributes)
+    //- if buttonActive
+    +icon("icon-heart-fill", 20, 20).round-btn__icon-active.hidden
+    +icon("icon-heart", 20, 20).round-btn__icon

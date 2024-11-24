@@ -24,10 +24,12 @@ mixin card(options = {})
           each hashtag in hashtags
             li.card__hashtag!= hashtag.hashtag
         if options.buttonCall
-          +btn({text: "Позвать!", href: "#", isExternal: true}).btn(aria-label="Позвать!")
+          +btn({text: "Позвать!", href: "#", isExternal: true})(aria-label="Позвать!")
         if options.like
-          +icon(like.name, like.width, like.height)
-          p.card__likes!= like.count
+          .card__like-wrapper
+            +round-btn({buttonActive: true,}).card__like-icon
+              //- +icon(options.like, options.width, options.height)
+            p.card__likes!= options.count
       .card__content-inner
         ul.card__countries
           each country in countries
