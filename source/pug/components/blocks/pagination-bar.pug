@@ -2,13 +2,13 @@ mixin pagination-bar()
   .pagination-bar
     ul.pagination-bar__list
       li.pagination-bar__item
-        button(type="button").btn-reset.pagination-bar__button.is-active 1
+        button.btn-reset.pagination-bar__button.is-active(type="button") 1
       li.pagination-bar__item
-        button(type="button").btn-reset.pagination-bar__button 2
+        button.btn-reset.pagination-bar__button(type="button") 2
       li.pagination-bar__item
-        button(type="button").btn-reset.pagination-bar__button 3
+        button.btn-reset.pagination-bar__button(type="button") 3
       li.pagination-bar__item.is-hide
-        button(type="button").btn-reset.pagination-bar__button 4
+        button.btn-reset.pagination-bar__button(type="button") 4
     .pagination-bar__arrows
-      +btn({type: "button", icon: "icon-arrow-left", iconWidth: 13, iconHeight: 20})(aria-label="На шаг назад").btn--arrow.pagination-bar__button.pagination-bar__button--previous.is-disabled
-      +btn({type: "button", icon: "icon-arrow-right", iconWidth: 13, iconHeight: 20})(aria-label="На шаг вперёд").btn--arrow.pagination-bar__button.pagination-bar__button--next
+      +btn({type: "button", icon: "icon-arrow-left", iconWidth: 13, iconHeight: 20}).btn--arrow.pagination-bar__button.pagination-bar__button--previous.is-disabled(aria-label="На шаг назад")
+      +btn({type: "button", icon: "icon-arrow-right", iconWidth: 13, iconHeight: 20}).btn--arrow.pagination-bar__button.pagination-bar__button--next(aria-label="На шаг вперёд")

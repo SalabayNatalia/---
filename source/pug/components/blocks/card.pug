@@ -12,17 +12,25 @@ mixin card(options = {})
 
   .card&attributes(attributes)
     .card__wrapper
-      .card__travelers-avatar
+      .card__avatar
         +picture(imagePath, image, imageExt, imageWidth, imageHeight, "")
       //- .card__content
-      .card__content-inner
+      .card__inner-name-hashtags
         .card__name-marker
-          if (marker)
-            .card__marker(class=`card__marker--${marker}`)
           .card__traveler-name!= travelerName
+            if (marker)
+              span.card__marker(class=`card__marker--${marker}`)
         ul.card__hashtags
           each hashtag in hashtags
             li.card__hashtag!= hashtag.hashtag
+      .card__inner-countries
+        h3.card__head.card__countries-head Хочет посетить:
+        ul.card__countries
+          each country in countries
+            li.card__country
+              +icon(country.name, country.width, country.height)
+              p.card__country-name!= country.country
+      .card__inner-like
         if options.buttonCall
           +btn({text: "Позвать!", href: "#", isExternal: true})(aria-label="Позвать!")
         if options.like
@@ -30,15 +38,17 @@ mixin card(options = {})
             +round-btn({buttonActive: true,}).card__like-icon
               //- +icon(options.like, options.width, options.height)
             p.card__likes!= options.count
-      .card__content-inner
-        ul.card__countries
-          each country in countries
-            li.card__country
-              +icon(country.name, country.width, country.height)
-              p.card__country-name!= country.country
-      ul.card__transport
-        each item in transport
-          li.card__transport-item
-            button.card__transport-button(class=`${item.isActive?"is-active":""}`, type="button")
-              +icon(item.name, item.width, item.height).card__transport-icon
+      .card__inner-transport
+        h3.card__head.card__transport-head Транспорт:
+        ul.card__transport
+          each item in transport
+            li.card__transport-item
+              button.card__transport-button(class=`${item.isActive?"is-active":""}`, type="button")
+                +icon(item.name, item.width, item.height).card__transport-icon
+        .card__level-wrapper
+          h3.card__head.card__level-head Левел:
+          +icon(options.levelIcon, 60, 60)
+          p.card__level-number!= options.levelNumber
+          p.card__level level
+
 

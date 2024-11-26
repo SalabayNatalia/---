@@ -1,0 +1,15 @@
+mixin sort-bar(isFilters)
+  .sort-bar&attributes(attributes)
+    if (isFilters)
+      button.btn-reset.sort-bar__filter-button(type="button", data-open-modal="filter")
+        +icon("icon-filter", 12, 11)
+        = "Фильтры"
+    .sort-bar__sort
+      button.btn-reset.sort-bar__sort-button(type="button", data-sort="button")
+        +icon("filter", 23, 15)
+      p.sort-bar__label Фильтрация по странам:
+      .sort-bar__sort-buttons(data-sort="wrapper")
+        button.btn-reset.sort-bar__sort-button.is-active(type="button", data-sort="button") Европа
+        button.btn-reset.sort-bar__sort-button(type="button", data-sort="button") Азия
+        button.btn-reset.sort-bar__sort-button(type="button", data-sort="button") Америка
+        button.btn-reset.sort-bar__sort-button(type="button", data-sort="button") Острова
