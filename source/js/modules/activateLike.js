@@ -13,7 +13,7 @@ const activateLike = () => {
             iconActive.classList.remove('hidden');
             icon.classList.add('hidden');
           } else {
-            iconActive.classList.toggle('hidden');
+            iconActive.classList.add('hidden');
             icon.classList.remove('hidden');
           }
         });
@@ -22,4 +22,4 @@ const activateLike = () => {
   });
 };
 
-export { activateLike };
+export {activateLike};

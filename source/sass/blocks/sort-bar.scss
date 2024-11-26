@@ -1,0 +1,165 @@
+.sort-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 74px;
+
+  // @include vp-649 {
+  //   justify-content: space-between;
+  //   margin-bottom: 12px;
+  // }
+
+  &__filter-button {
+    display: none;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background-color: $color-transparent;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+
+    color: $midnight-express2;
+
+    cursor: pointer;
+    user-select: none;
+    transition: color $trans-default, opacity $trans-default;
+
+    // @include vp-649 {
+    //   display: flex;
+    // }
+
+    svg {
+      width: 12px;
+      height: 11px;
+      margin-right: 8px;
+
+      transition: color $trans-default;
+    }
+
+    @include hover-focus {
+      opacity: 0.6;
+
+      svg {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &__sort {
+    display: flex;
+  }
+
+  &__label {
+    margin: 0 5px 0 0;
+    text-transform: uppercase;
+    font-family: $ff-roboto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    color: $midnight-express2;
+
+    // @include vp-649 {
+    //   display: none;
+    // }
+  }
+
+  &__sort-buttons {
+    display: flex;
+
+    // @include vp-649 {
+    //   display: none;
+    //   flex-direction: column;
+    // }
+  }
+
+  &__sort-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    padding: 0;
+    border: none;
+    background-color: $color-transparent;
+    text-transform: uppercase;
+    color: $midnight-express2;
+    font-family: $ff-roboto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+    opacity: 0.3;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition: text-shadow $trans-default, color $trans-default, opacity $trans-default;
+
+    @include hover-focus {
+      opacity: 0.6;
+    }
+
+    // @include vp-649 {
+    //   display: none;
+    //   margin-right: 0;
+
+    //   font-size: 10px;
+    //   line-height: 15px;
+    // }
+
+    // &--mobile {
+    //   display: none;
+
+    //   @include vp-649 {
+    //     display: flex;
+    //   }
+    // }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.is-active {
+      // text-shadow: 0 0 1px $color-arsenic;
+      opacity: 1;
+      pointer-events: none;
+
+      // @include vp-649 {
+      //   display: flex;
+
+      //   pointer-events: auto;
+      // }
+    }
+
+    svg {
+      width: 11px;
+      height: 14px;
+      margin: 0 0 0 12px;
+
+      // color: $color-arsenic;
+
+      // transition: color $color-arsenic;
+
+      // @include vp-649 {
+      //   order: -1;
+
+      //   width: 7px;
+      //   height: 11px;
+      //   margin: 0 8px 0 0;
+      // }
+    }
+
+    // @include active {
+    //   text-shadow: 0 0 0.5px $color-arsenic;
+    // }
+
+    // &:disabled {
+    //   color: $color-pink-swan;
+
+
+    //   svg {
+    //     color: $color-pink-swan;
+    //   }
+    // }
+  }
+}

@@ -16,6 +16,10 @@
     fill: rgba(25, 33, 68, 0.3);
     transition: fill $trans-default;
 
+    // .round-btn__icon path {
+    //   fill-rule: evenodd;
+    // }
+
     &.hidden {
       display: none;
     }
@@ -63,12 +67,12 @@
       }
     }
 
-    // &:active {
-    //   background-color: $remy;
+    &:active {
+      background-color: $remy;
 
-    //   svg {
-    //     fill: rgba(240, 35, 35, 0.3);
-    //   }
-    // }
+      svg {
+        fill: rgba(240, 35, 35, 0.3);
+      }
+    }
   }
 }
